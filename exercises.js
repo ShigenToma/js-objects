@@ -57,7 +57,16 @@ console.log("My dog " + dog.name + " is " + dog.age + " years old and likes to "
             
   Console.log the object.
 */
+var kicks = {};
+kicks.brand = 'adidas';
+kicks.color = 'cornflower blue';
+kicks.size = 9;
+kicks.price = 50
+kicks.buy = function(){
+    return "Now I is a cool kid!";
+}
 
+console.log(kicks);
 
 /* 
 
@@ -69,7 +78,11 @@ console.log("My dog " + dog.name + " is " + dog.age + " years old and likes to "
 
   console.log the object
 */
-
+var plainBox = {};
+plainBox.color = "grey";
+plainBox.size = 10;
+plainBox.contents = [];
+console.log(plainBox);
 
 /*
 5. Declare a variable named `stockCar` and create the following properties (key-value pairs) to the object:
@@ -81,7 +94,14 @@ console.log("My dog " + dog.name + " is " + dog.age + " years old and likes to "
 
     console.log the object
 */
-
+var stockCar = {
+    model: "Ford",
+    year: 2015,
+    automaticTransmission: true,
+    driver: null,
+    passengers: []
+  }
+  console.log(stockCar);
 
 /*
 
@@ -99,7 +119,18 @@ console.log("My dog " + dog.name + " is " + dog.age + " years old and likes to "
    the return value in a variable named `completePerson`. Use `console.log` three times to print the entire object, just 
    the value at `name`, and just the value at `age`.
  */
+var plainPerson = {};
+function buildPerson(person, nameString, age){
+  person.name = nameString;
+  person.age = age;
+  return person;
+  
+}
 
+var completePerson = buildPerson(plainPerson, "Charlie Brown", 80);
+ console.log(completePerson);
+ console.log(buildPerson(80));
+console.log(buildPerson("Charlie Brown"));
 
 /*
 7. Display values of objects that are inside an array
@@ -139,7 +170,17 @@ console.log("My dog " + dog.name + " is " + dog.age + " years old and likes to "
         Invoke your function and pass in your object, store the result to a variable named sumObjResult and use `console.log` 
         to inspect your results.
 */
-
+var sumObj = {
+    a: 1,
+    b: 2,
+    result: undefined
+  };
+    function objectAddition(obj){
+    obj.result = obj.a + obj.b;
+      return obj;
+  }
+  var sumObjResult = objectAddition(sumObj);
+  console.log(sumObjResult);
 
 /*
 9. Print sum function and add as new key-value
@@ -158,6 +199,13 @@ console.log("My dog " + dog.name + " is " + dog.age + " years old and likes to "
         **create more** objects and invoke your function multiple times.
  */
 
+    function printObj(obj){
+        return obj.a + " + " + obj.b + " = " +  obj.result;
+    }
+    var output = printObj(sumObj);
+    console.log(printObj(sumObj));
+    console.log(output);
+
 
 /*
 10. Putting stuff in `plainBox`
@@ -168,8 +216,14 @@ console.log("My dog " + dog.name + " is " + dog.age + " years old and likes to "
         Invoke your function and pass in your object (which should be `plainBox`), store the result to a variable named 
         plainBoxResult and use `console.log` to inspect your results.
  */
-
-
+function putInPlainBox(obj) {
+    for ( var i = 0; i < 10; i++){
+        obj.contents.push(Math.floor(Math.random() * 10));
+    }
+    return obj; 
+}
+var plainBoxResults = putInPlainBox(plainBox);
+console.log(plainBoxResults);
 /*
 11. Detecting transmission
     Declare a function named detectingTransmission and a single parameter which will be an object. Within this function 
@@ -180,7 +234,7 @@ console.log("My dog " + dog.name + " is " + dog.age + " years old and likes to "
 
     Invoke your function and pass in your stockCar object, store the result to a variable named isAutomaticTransmission and use `console.log` to inspect your results.
  */
-
+function detectingTransmission(obj)
 
 /*
 12.  Who's driving this thing?!
